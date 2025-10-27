@@ -35,7 +35,7 @@ export function HomeScreen({ user, onImageCapture, onNavigate }: HomeScreenProps
   return (
     <div className="min-h-screen bg-gradient-to-b from-green-50 to-blue-50">
       {/* Header */}
-      <div className="bg-white shadow-sm px-4 py-3 flex items-center justify-between">
+      <div className="fixed left-0 right-0 z-40 bg-white shadow-sm px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
             <SheetTrigger asChild>
@@ -53,10 +53,10 @@ export function HomeScreen({ user, onImageCapture, onNavigate }: HomeScreenProps
                   Wildlife Identification App
                 </p>
               </SheetHeader>
-              
+
               <div className="mt-0 space-y-4 px-4">
                 <div>
-                 
+
                   <div className="space-y-2">
                     <Button
                       variant="ghost"
@@ -69,7 +69,7 @@ export function HomeScreen({ user, onImageCapture, onNavigate }: HomeScreenProps
                         <div className="text-sm font-normal text-muted-foreground">Photo-based AI analysis</div>
                       </div>
                     </Button>
-                    
+
                     <Button
                       variant="ghost"
                       className="w-full justify-start gap-3 h-12 text-base"
@@ -85,7 +85,7 @@ export function HomeScreen({ user, onImageCapture, onNavigate }: HomeScreenProps
                 </div>
 
                 <div className="border-t pt-4">
-                
+
                   <div className="space-y-2">
                     <Button
                       variant="ghost"
@@ -110,13 +110,12 @@ export function HomeScreen({ user, onImageCapture, onNavigate }: HomeScreenProps
               </div>
             </SheetContent>
           </Sheet>
-          
           <div>
             <h1 className="text-2xl font-medium text-green-800 font-bold">Turtlify</h1>
             <p className="text-sm text-gray-500">AI Identification</p>
           </div>
         </div>
-        
+
         <Button
           variant="ghost"
           size="icon"
@@ -141,7 +140,7 @@ export function HomeScreen({ user, onImageCapture, onNavigate }: HomeScreenProps
         <div className="space-y-4">
           <Card className="overflow-hidden">
             <CardContent className="p-6">
-              <Button 
+              <Button
                 onClick={handleCameraCapture}
                 className="w-full h-20 bg-green-600 hover:bg-green-700 flex flex-col items-center justify-center space-y-2 text-base"
               >
@@ -153,12 +152,12 @@ export function HomeScreen({ user, onImageCapture, onNavigate }: HomeScreenProps
 
           <Card className="overflow-hidden">
             <CardContent className="p-6 relative">
-              <input  
-              accept="image/png, image/jpeg, image/jpg" 
+              <input
+              accept="image/png, image/jpeg, image/jpg"
               onChange={handleGallerySelect}
-              type="file" 
-              className="hidden" 
-              id="gallery-upload" 
+              type="file"
+              className="hidden"
+              id="gallery-upload"
               style={{
               position:'absolute',
               width:'100%',
@@ -166,7 +165,7 @@ export function HomeScreen({ user, onImageCapture, onNavigate }: HomeScreenProps
               opacity:0
               }} />
 
-  <Button 
+  <Button
                 onClick={handleGallerySelect}
                 variant="outline"
                 className="w-full h-20 flex flex-col items-center justify-center space-y-2 border-green-200 hover:bg-green-50 text-base"
@@ -187,8 +186,8 @@ export function HomeScreen({ user, onImageCapture, onNavigate }: HomeScreenProps
                 <h3 className="font-medium mb-1 text-base">Try Manual Identification</h3>
                 <p className="text-base text-gray-600">Browse category guides</p>
               </div>
-              <Button 
-                variant="secondary" 
+              <Button
+                variant="secondary"
                 onClick={() => onNavigate('manual')}
                 className="bg-blue-200 border-blue-100 text-blue-700 hover:bg-blue-50 text-base"
               >
