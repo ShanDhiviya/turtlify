@@ -1,0 +1,20 @@
+{
+  "expo": {
+    "name": "Turtlify Mobile",
+    "slug": "turtlify-mobile",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "version": "1.0.0",
+    "sdkVersion": "49.0.0",
+    "orientation": "portrait",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "android": {
+      "package": "com.anonymous.turtlifymobile"
+    }
+  }
+}
