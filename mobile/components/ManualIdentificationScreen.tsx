@@ -1,5 +1,5 @@
-import { Button } from './ui/button';
-import { Card, CardContent } from './ui/card';
+import { Button } from './shared/button';
+import { Card, CardContent } from './shared/card';
 import { ChevronLeft } from 'lucide-react';
 
 interface ManualIdentificationScreenProps {

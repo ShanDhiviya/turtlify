@@ -1,4 +1,4 @@
-import { Button } from './ui/button';
+import { Button } from './shared/button';
 import { ChevronLeft, Download, ZoomIn, ZoomOut } from 'lucide-react';
 import { useState } from 'react';
 

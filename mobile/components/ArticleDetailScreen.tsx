@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Button } from './ui/button';
-import { Card, CardContent, CardHeader } from './ui/card';
-import { Badge } from './ui/badge';
+import { Button } from './shared/button';
+import { Card, CardContent, CardHeader } from './shared/card';
+import { Badge } from './shared/badge';
 import { ArrowLeft, Share2, Bookmark, Type, Plus, Minus, Heart, MessageCircle } from 'lucide-react';
 import { Article } from '../App';
 

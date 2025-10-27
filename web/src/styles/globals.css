@@ -185,5 +185,7 @@
 }
 
 html {
+  padding:0px;
+  margin:0px;
   font-size: var(--font-size);
 }

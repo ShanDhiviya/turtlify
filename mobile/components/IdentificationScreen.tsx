@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Button } from './ui/button';
-import { Progress } from './ui/progress';
+import { Button } from './shared/button';
+import { Progress } from './shared/progress';
 import { ChevronLeft } from 'lucide-react';
 import { AnimalDiscovery } from '../App';
 

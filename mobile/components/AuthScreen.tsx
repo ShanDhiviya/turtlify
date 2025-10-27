@@ -1,18 +1,18 @@
 import { useState } from "react";
-import { Button } from "./ui/button";
-import { Input } from "./ui/input";
+import { Button } from "./shared/button";
+import { Input } from "./shared/input";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-} from "./ui/card";
+} from "./shared/card";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "./ui/tabs";
+} from "./shared/tabs";
 import { AppleIcon } from "./AppleIcon";
 import { GoogleIcon } from "./GoogleIcon";
 import { User } from "../App";

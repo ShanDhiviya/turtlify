@@ -1,7 +1,7 @@
-import { Button } from './ui/button';
-import { Card, CardContent } from './ui/card';
+import { Button } from './shared/button';
+import { Card, CardContent } from './shared/card';
 import { ArrowLeft, Search } from 'lucide-react';
-import { Input } from './ui/input';
+import { Input } from './shared/input';
 import { AnimalDiscovery } from '../App';
 import { useState } from 'react';
 

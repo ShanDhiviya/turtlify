@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { Button } from './ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { Input } from './ui/input';
-import { Textarea } from './ui/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
-import { Badge } from './ui/badge';
+import { Button } from './shared/button';
+import { Card, CardContent, CardHeader, CardTitle } from './shared/card';
+import { Input } from './shared/input';
+import { Textarea } from './shared/textarea';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './shared/select';
+import { Badge } from './shared/badge';
 import { ArrowLeft, Save, Eye, Hash, X } from 'lucide-react';
 import { Article } from '../App';
 

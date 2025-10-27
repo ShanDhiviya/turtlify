@@ -1,6 +1,6 @@
-import { Button } from './ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { Avatar, AvatarFallback } from './ui/avatar';
+import { Button } from './shared/button';
+import { Card, CardContent, CardHeader, CardTitle } from './shared/card';
+import { Avatar, AvatarFallback } from './shared/avatar';
 import { ChevronLeft, Settings, Award, Camera, BookOpen } from 'lucide-react';
 import { User } from '../App';
 

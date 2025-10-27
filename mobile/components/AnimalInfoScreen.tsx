@@ -1,6 +1,6 @@
-import { Button } from './ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { Badge } from './ui/badge';
+import { Button } from './shared/button';
+import { Card, CardContent, CardHeader, CardTitle } from './shared/card';
+import { Badge } from './shared/badge';
 import { ChevronLeft, MapPin, Calendar, Share } from 'lucide-react';
 import { AnimalDiscovery, Screen } from '../App';
 

@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Button } from './ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { Badge } from './ui/badge';
-import { Input } from './ui/input';
+import { Button } from './shared/button';
+import { Card, CardContent, CardHeader, CardTitle } from './shared/card';
+import { Badge } from './shared/badge';
+import { Input } from './shared/input';
 import { ArrowLeft, Search, Edit3, Clock, User, TrendingUp } from 'lucide-react';
 import { Article, User as UserType, Screen } from '../App';
 
