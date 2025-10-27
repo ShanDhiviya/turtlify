@@ -33,9 +33,12 @@ export function HomeScreen({ user, onImageCapture, onNavigate }: HomeScreenProps
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-b from-green-50
+    to-blue-50" style={{
+      marginTop:'58px'
+    }}>
       {/* Header */}
-      <div className="fixed left-0 right-0 z-40 bg-white shadow-sm px-4 py-3 flex items-center justify-between">
+      <div className="fixed left-0 right-0 z-40 top-0 bg-white shadow-sm px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
             <SheetTrigger asChild>

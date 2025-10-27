@@ -44,9 +44,11 @@ export function AnimalInfoScreen({ animal, onBack, onNavigate }: AnimalInfoScree
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-green-50">
+    <div style={{
+      marginTop:'58px'
+    }} className="min-h-screen mt-58 bg-gradient-to-b from-blue-50 to-green-50">
       {/* Header */}
-      <div className="bg-white shadow-sm px-4 py-3 flex items-center justify-between">
+      <div className="fixed z-40 top-0 left-0 right-0 bg-white shadow-sm px-4 py-3 flex items-center justify-between">
         <Button variant="ghost" size="icon" onClick={onBack}>
           <ChevronLeft className="w-12 h-12" />
         </Button>
@@ -127,8 +129,8 @@ export function AnimalInfoScreen({ animal, onBack, onNavigate }: AnimalInfoScree
 
         {/* Action Buttons */}
         <div className="space-y-3">
-          <Button 
-            onClick={() => onNavigate('home')} 
+          <Button
+            onClick={() => onNavigate('home')}
             className="w-full bg-green-600 hover:bg-green-700 text-base"
           >
             Identify Another Animal

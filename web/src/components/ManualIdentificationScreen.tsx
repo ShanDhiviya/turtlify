@@ -71,9 +71,11 @@ export function ManualIdentificationScreen({ onPDFOpen, onBack }: ManualIdentifi
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-50 to-blue-50">
+    <div className="relative min-h-screen bg-gradient-to-b from-green-50 to-blue-50" style={{
+      marginTop:'58px',
+    }}>
       {/* Header */}
-      <div className="bg-white shadow-sm px-4 py-3 flex items-center justify-between">
+      <div className="fixed top-0 left-0 right-0 z-1000 bg-white shadow-sm px-4 py-3 flex items-center justify-between">
         <Button variant="ghost" size="icon" onClick={onBack}>
           <ChevronLeft className="w-12 h-12" />
         </Button>
@@ -82,7 +84,7 @@ export function ManualIdentificationScreen({ onPDFOpen, onBack }: ManualIdentifi
       </div>
 
       {/* Content */}
-      <div className="p-4">
+      <div className="p-4 relative">
         <div className="text-center mb-6">
           <div className="w-16 h-16 mx-auto bg-green-100 rounded-full flex items-center justify-center mb-3">
             <span className="text-3xl">🔍</span>
@@ -94,14 +96,14 @@ export function ManualIdentificationScreen({ onPDFOpen, onBack }: ManualIdentifi
         {/* Category Grid */}
         <div className="grid grid-cols-2 gap-4">
           {categories.map((category) => (
-            <Card 
-              key={category.id} 
-              className="overflow-hidden cursor-pointer hover:shadow-lg transition-shadow"
+            <Card
+              key={category.id}
+              className="z-10 relative overflow-hidden cursor-pointer hover:shadow-lg transition-shadow"
               onClick={() => handleTileClick(category.title)}
             >
               <div className="aspect-square relative">
-                <img 
-                  src={category.imageUrl} 
+                <img
+                  src={category.imageUrl}
                   alt={category.title}
                   className="w-full h-full object-cover"
                   loading="lazy"

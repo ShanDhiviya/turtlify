@@ -33,7 +33,7 @@ export function IdentificationScreen({ image, onAnimalIdentified, onBack }: Iden
 
       // Mock identification result
       await new Promise(resolve => setTimeout(resolve, 500));
-      
+
       const mockAnimal: AnimalDiscovery = {
         id: Date.now().toString(),
         commonName: 'Green Sea Turtle',
@@ -67,9 +67,11 @@ export function IdentificationScreen({ image, onAnimalIdentified, onBack }: Iden
   }, [image, onAnimalIdentified]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-green-50">
+    <div style={{
+      marginTop:'58px'
+    }} className="min-h-screen bg-gradient-to-b from-blue-50 to-green-50">
       {/* Header */}
-      <div className="bg-white shadow-sm px-4 py-3 flex items-center">
+      <div className="fixed z-40 left-0 right-0 bg-white shadow-sm px-4 py-3 flex items-center">
         <Button variant="ghost" size="icon" onClick={onBack} className="mr-2">
           <ChevronLeft className="w-12 h-12" />
         </Button>
