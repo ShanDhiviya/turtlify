@@ -22,9 +22,9 @@ interface AuthScreenProps {
 }
 
 export function AuthScreen({ onLogin }: AuthScreenProps) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
+  const [email, setEmail] = useState("prashasoft@gmail.com");
+  const [password, setPassword] = useState("123123123");
+  const [name, setName] = useState("Shan Dhiviyarajan");
 
   const handleLogin = () => {
     // Mock login
@@ -87,7 +87,7 @@ export function AuthScreen({ onLogin }: AuthScreenProps) {
                   value="register"
                   className="h-full text-base"
                 >
-                  Sign Up
+                  Register
                 </TabsTrigger>
               </TabsList>
 

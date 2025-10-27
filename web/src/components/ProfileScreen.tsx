@@ -22,13 +22,13 @@ export function ProfileScreen({ user, onLogout, onBack }: ProfileScreenProps) {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-green-50">
       {/* Header */}
-      <div className="bg-white shadow-sm px-4 py-3 flex items-center justify-between">
+      <div className="bg-white px-2 py-2 flex items-center justify-between">
         <Button variant="ghost" size="icon" onClick={onBack}>
-          <ChevronLeft className="w-12 h-12" />
+          <ChevronLeft className="w-24 h-24" />
         </Button>
-        <h1 className="text-xl font-medium">Profile</h1>
+        <h1 className="text-xl font-bold">Profile</h1>
         <Button variant="ghost" size="icon">
-          <Settings className="w-12 h-12" />
+          <Settings className="w-24 h-24" />
         </Button>
       </div>
 
@@ -45,7 +45,7 @@ export function ProfileScreen({ user, onLogout, onBack }: ProfileScreenProps) {
               <div className="flex-1">
                 <h2 className="text-2xl font-medium">{user.name}</h2>
                 <p className="text-base text-gray-600">{user.email}</p>
-                <p className="text-base text-green-600 mt-1">Turtle Explorer</p>
+                <p className="text-base text-green-600 mt-1 font-bold">Turtle Explorer</p>
               </div>
             </div>
           </CardContent>

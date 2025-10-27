@@ -20,7 +20,8 @@ export function HomeScreen({ user, onImageCapture, onNavigate }: HomeScreenProps
     onImageCapture(mockImageData);
   };
 
-  const handleGallerySelect = () => {
+  const handleGallerySelect = (event:any) => {
+    console.log(event)
     // Mock gallery selection - using a sample animal image
     const mockImageData = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgICAgMCAgIDAwMDBAYEBAQEBAgGBgUGCQgKCgkICQkKDA8MCgsOCwkJDRENDg8QEBEQCgwSExIQEw8QEBD/2wBDAQMDAwQDBAgEBAgQCwkLEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBD/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k=";
     onImageCapture(mockImageData);
@@ -38,12 +39,12 @@ export function HomeScreen({ user, onImageCapture, onNavigate }: HomeScreenProps
         <div className="flex items-center gap-3">
           <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu className="w-12 h-12" />
+              <Button variant="ghost">
+                <Menu className="h-24 w-24"  />
               </Button>
             </SheetTrigger>
             <SheetContent side="left" className="w-80">
-              <SheetHeader className="text-left">
+              <SheetHeader className="text-left ">
                 <SheetTitle className="flex items-center gap-2 text-xl">
                   <span className="text-2xl">🐢</span>
                   Turtlify
@@ -53,21 +54,19 @@ export function HomeScreen({ user, onImageCapture, onNavigate }: HomeScreenProps
                 </p>
               </SheetHeader>
               
-              <div className="mt-8 space-y-4">
+              <div className="mt-0 space-y-4 px-4">
                 <div>
-                  <h3 className="font-medium text-base text-gray-500 uppercase tracking-wide mb-3">
-                    Identification Methods
-                  </h3>
+                 
                   <div className="space-y-2">
                     <Button
                       variant="ghost"
                       className="w-full justify-start gap-3 h-12 text-base"
                       onClick={() => handleMenuItemClick('home')}
                     >
-                      <Brain className="w-6 h-6 text-green-600" />
+                      <Brain className="w-10 h-10 text-green-600" />
                       <div className="text-left">
-                        <div className="font-medium">AI Identification</div>
-                        <div className="text-sm text-muted-foreground">Photo-based AI analysis</div>
+                        <div className="font-medium text-lg">AI Identification</div>
+                        <div className="text-sm font-normal text-muted-foreground">Photo-based AI analysis</div>
                       </div>
                     </Button>
                     
@@ -76,19 +75,17 @@ export function HomeScreen({ user, onImageCapture, onNavigate }: HomeScreenProps
                       className="w-full justify-start gap-3 h-12 text-base"
                       onClick={() => handleMenuItemClick('manual')}
                     >
-                      <BookOpen className="w-6 h-6 text-blue-600" />
+                      <BookOpen className="w-10 h-10 text-blue-600" />
                       <div className="text-left">
-                        <div className="font-medium">Manual Identification</div>
-                        <div className="text-sm text-muted-foreground">Category-based guides</div>
+                        <div className="font-medium font-bold">Manual Identification</div>
+                        <div className="text-sm font-normal text-muted-foreground">Category-based guides</div>
                       </div>
                     </Button>
                   </div>
                 </div>
 
                 <div className="border-t pt-4">
-                  <h3 className="font-medium text-base text-gray-500 uppercase tracking-wide mb-3">
-                    Account
-                  </h3>
+                
                   <div className="space-y-2">
                     <Button
                       variant="ghost"
@@ -115,8 +112,8 @@ export function HomeScreen({ user, onImageCapture, onNavigate }: HomeScreenProps
           </Sheet>
           
           <div>
-            <h1 className="text-2xl font-medium text-green-800">Turtlify</h1>
-            <p className="text-base text-gray-600">AI Identification</p>
+            <h1 className="text-2xl font-medium text-green-800 font-bold">Turtlify</h1>
+            <p className="text-sm text-gray-500">AI Identification</p>
           </div>
         </div>
         
@@ -155,8 +152,21 @@ export function HomeScreen({ user, onImageCapture, onNavigate }: HomeScreenProps
           </Card>
 
           <Card className="overflow-hidden">
-            <CardContent className="p-6">
-              <Button 
+            <CardContent className="p-6 relative">
+              <input  
+              accept="image/png, image/jpeg, image/jpg" 
+              onChange={handleGallerySelect}
+              type="file" 
+              className="hidden" 
+              id="gallery-upload" 
+              style={{
+              position:'absolute',
+              width:'100%',
+              height:'100%',
+              opacity:0
+              }} />
+
+  <Button 
                 onClick={handleGallerySelect}
                 variant="outline"
                 className="w-full h-20 flex flex-col items-center justify-center space-y-2 border-green-200 hover:bg-green-50 text-base"
@@ -164,6 +174,7 @@ export function HomeScreen({ user, onImageCapture, onNavigate }: HomeScreenProps
                 <Image className="w-12 h-12" />
                 <span>Choose from Gallery</span>
               </Button>
+
             </CardContent>
           </Card>
         </div>
@@ -177,12 +188,12 @@ export function HomeScreen({ user, onImageCapture, onNavigate }: HomeScreenProps
                 <p className="text-base text-gray-600">Browse category guides</p>
               </div>
               <Button 
-                variant="outline" 
+                variant="secondary" 
                 onClick={() => onNavigate('manual')}
-                className="border-blue-200 text-blue-700 hover:bg-blue-50 text-base"
+                className="bg-blue-200 border-blue-100 text-blue-700 hover:bg-blue-50 text-base"
               >
                 <BookOpen className="w-5 h-5 mr-2" />
-                Browse
+                Browse Library
               </Button>
             </div>
           </CardContent>
