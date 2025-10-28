@@ -68,12 +68,16 @@ export function IdentificationScreen({ image, onAnimalIdentified, onBack }: Iden
 
   return (
     <div style={{
-      marginTop:'58px'
     }} className="min-h-screen bg-gradient-to-b from-blue-50 to-green-50">
       {/* Header */}
-      <div className="fixed z-40 left-0 right-0 bg-white shadow-sm px-4 py-3 flex items-center">
+      <div className="fixed z-40 left-0 right-0 bg-white shadow-sm px-4 py-3 flex items-center" style={{
+        zIndex: 999,
+      }}>
         <Button variant="ghost" size="icon" onClick={onBack} className="mr-2">
-          <ChevronLeft className="w-12 h-12" />
+          <ChevronLeft className="w-12 h-12" style={{
+            width: 24,
+            height: 24,
+          }} />
         </Button>
         <h1 className="text-xl font-medium">Identifying...</h1>
       </div>
