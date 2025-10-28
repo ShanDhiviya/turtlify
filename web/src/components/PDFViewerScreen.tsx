@@ -31,15 +31,23 @@ export function PDFViewerScreen({ title, onBack }: PDFViewerScreenProps) {
       marginTop:'58px',
     }}>
       {/* Header */}
-      <div className="fixed left-0 right-0 top-0 z-40 bg-white shadow-sm px-4 py-3 flex items-center justify-between">
+      <div className="fixed left-0 right-0 top-0 z-40 bg-white shadow-sm px-4 py-3 flex items-center justify-between" style={{
+        zIndex:999
+      }}>
         <Button variant="ghost" size="icon" onClick={onBack}>
-          <ChevronLeft className="w-12 h-12" />
+          <ChevronLeft className="w-12 h-12" style={{
+            width: 24,
+            height: 24,
+          }} />
         </Button>
-        <h1 className="text-xl font-medium text-gray-800 flex-1 text-center px-2">
+        <h1 className="text-xl font-medium text-green-800 flex-1 text-center px-2 font-bold">
           {title} Guide
         </h1>
         <Button variant="ghost" size="icon" onClick={handleDownload}>
-          <Download className="w-12 h-12" />
+          <Download className="w-12 h-12" style={{
+            width: 24,
+            height: 24,
+          }} />
         </Button>
       </div>
 
