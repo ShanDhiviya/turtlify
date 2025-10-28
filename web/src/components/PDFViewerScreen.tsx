@@ -28,7 +28,7 @@ export function PDFViewerScreen({ title, onBack }: PDFViewerScreenProps) {
 
   return (
     <div className="min-h-screen bg-gray-100" style={{
-      marginTop:'58px',
+      marginTop:'116px',
     }}>
       {/* Header */}
       <div className="fixed left-0 right-0 top-0 z-40 bg-white shadow-sm px-4 py-3 flex items-center justify-between" style={{
@@ -68,7 +68,10 @@ export function PDFViewerScreen({ title, onBack }: PDFViewerScreenProps) {
       </div>
 
       {/* PDF Viewer */}
-      <div className="flex-1 p-4">
+      <div className="flex-1 p-4 fixed" style={{
+        top:58,
+        zIndex:99,
+      }}>
         <div className="bg-white rounded-lg shadow-sm overflow-hidden">
           {/* PDF Preview/Mock Content */}
           <div className="aspect-[8.5/11] bg-white border">
