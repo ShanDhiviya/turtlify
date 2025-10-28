@@ -4,6 +4,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from './ui
 import { Camera, Image, User, Menu, Brain, BookOpen } from 'lucide-react';
 import { User as UserType, Screen } from '../App';
 import { useState } from 'react';
+import {Avatar, AvatarFallback} from "./ui/avatar";
 
 interface HomeScreenProps {
   user: UserType;
@@ -32,6 +33,14 @@ export function HomeScreen({ user, onImageCapture, onNavigate }: HomeScreenProps
     onNavigate(screen);
   };
 
+  const getInitials = (name: string) => {
+    return name
+        .split(' ')
+        .map(n => n[0])
+        .join('')
+        .toUpperCase();
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-green-50
     to-blue-50" style={{
@@ -43,17 +52,25 @@ export function HomeScreen({ user, onImageCapture, onNavigate }: HomeScreenProps
           <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost">
-                <Menu className="h-24 w-24"  />
+                <Menu className="h-24 w-24" style={{
+                  width:24,
+                  height:24,
+                  margin:0
+                }}  />
               </Button>
             </SheetTrigger>
             <SheetContent side="left" className="w-80">
               <SheetHeader className="text-left ">
+                <Avatar className="w-16 h-16">
+                  <AvatarFallback className="bg-green-100 text-green-800 text-xl">
+                    {getInitials('Shan Dhiviyarajan')}
+                  </AvatarFallback>
+                </Avatar>
                 <SheetTitle className="flex items-center gap-2 text-xl">
-                  <span className="text-2xl">🐢</span>
-                  Turtlify
+                  Shan Dhiviyarajan
                 </SheetTitle>
                 <p className="text-base text-muted-foreground">
-                  Wildlife Identification App
+                 prashasoft@gmail.com
                 </p>
               </SheetHeader>
 
@@ -66,7 +83,11 @@ export function HomeScreen({ user, onImageCapture, onNavigate }: HomeScreenProps
                       className="w-full justify-start gap-3 h-12 text-base"
                       onClick={() => handleMenuItemClick('home')}
                     >
-                      <Brain className="w-10 h-10 text-green-600" />
+                      <Brain className="w-10 h-10 text-green-600" style={{
+                        width:24,
+                        height:24,
+                        margin:0
+                      }} />
                       <div className="text-left">
                         <div className="font-medium text-lg">AI Identification</div>
                         <div className="text-sm font-normal text-muted-foreground">Photo-based AI analysis</div>
@@ -78,7 +99,11 @@ export function HomeScreen({ user, onImageCapture, onNavigate }: HomeScreenProps
                       className="w-full justify-start gap-3 h-12 text-base"
                       onClick={() => handleMenuItemClick('manual')}
                     >
-                      <BookOpen className="w-10 h-10 text-blue-600" />
+                      <BookOpen className="w-10 h-10 text-blue-600" style={{
+                        width:24,
+                        height:24,
+                        margin:0
+                      }} />
                       <div className="text-left">
                         <div className="font-medium font-bold">Manual Identification</div>
                         <div className="text-sm font-normal text-muted-foreground">Category-based guides</div>
@@ -95,7 +120,11 @@ export function HomeScreen({ user, onImageCapture, onNavigate }: HomeScreenProps
                       className="w-full justify-start gap-3 h-12 text-base"
                       onClick={() => handleMenuItemClick('profile')}
                     >
-                      <User className="w-6 h-6 text-gray-600" />
+                      <User className="w-6 h-6 text-gray-600" style={{
+                        width:24,
+                        height:24,
+                        margin:0
+                      }}/>
                       <div className="text-left">
                         <div className="font-medium">Profile</div>
                         <div className="text-sm text-muted-foreground">Account settings</div>
@@ -124,7 +153,11 @@ export function HomeScreen({ user, onImageCapture, onNavigate }: HomeScreenProps
           size="icon"
           onClick={() => onNavigate('profile')}
         >
-          <User className="w-12 h-12" />
+          <User className="w-12 h-12" style={{
+            width:24,
+            height:24,
+            margin:0
+          }} />
         </Button>
       </div>
 
@@ -147,7 +180,11 @@ export function HomeScreen({ user, onImageCapture, onNavigate }: HomeScreenProps
                 onClick={handleCameraCapture}
                 className="w-full h-20 bg-green-600 hover:bg-green-700 flex flex-col items-center justify-center space-y-2 text-base"
               >
-                <Camera className="w-12 h-12" />
+                <Camera style={{
+                  width:24,
+                  height:24,
+                  margin:0
+                }} className="w-12 h-12" />
                 <span>Take Photo</span>
               </Button>
             </CardContent>
@@ -173,7 +210,11 @@ export function HomeScreen({ user, onImageCapture, onNavigate }: HomeScreenProps
                 variant="outline"
                 className="w-full h-20 flex flex-col items-center justify-center space-y-2 border-green-200 hover:bg-green-50 text-base"
               >
-                <Image className="w-12 h-12" />
+                <Image className="w-12 h-12" style={{
+                  width:24,
+                  height:24,
+                  margin:0
+                }}  />
                 <span>Choose from Gallery</span>
               </Button>
 

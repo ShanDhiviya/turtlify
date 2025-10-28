@@ -50,11 +50,17 @@ export function AnimalInfoScreen({ animal, onBack, onNavigate }: AnimalInfoScree
       {/* Header */}
       <div className="fixed z-40 top-0 left-0 right-0 bg-white shadow-sm px-4 py-3 flex items-center justify-between">
         <Button variant="ghost" size="icon" onClick={onBack}>
-          <ChevronLeft className="w-12 h-12" />
+          <ChevronLeft className="w-12 h-12" style={{
+            width:24,
+            height:24,
+          }}  />
         </Button>
         <h1 className="text-xl font-medium">Species Information</h1>
         <Button variant="ghost" size="icon" onClick={handleShare}>
-          <Share className="w-12 h-12" />
+          <Share className="w-12 h-12" style={{
+            width:24,
+            height:24,
+          }} />
         </Button>
       </div>
 

@@ -20,16 +20,19 @@ export function ProfileScreen({ user, onLogout, onBack }: ProfileScreenProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-green-50">
+    <div className="pt-58 min-h-screen bg-gradient-to-b from-blue-50 to-green-50" style={{
+      paddingTop: '58px',
+    }}>
       {/* Header */}
-      <div className="bg-white px-2 py-2 flex items-center justify-between">
+      <div className="fixed left-0 right-0 top-0 bg-white px-2 py-2 flex items-center justify-between">
         <Button variant="ghost" size="icon" onClick={onBack}>
           <ChevronLeft className="w-24 h-24" />
         </Button>
         <h1 className="text-xl font-bold">Profile</h1>
-        <Button variant="ghost" size="icon">
-          <Settings className="w-24 h-24" />
-        </Button>
+        {/*<Button variant="ghost" size="icon">*/}
+        {/*  <Settings className="w-24 h-24" />*/}
+        {/*</Button>*/}
+        <div></div>
       </div>
 
       <div className="p-4 space-y-4">

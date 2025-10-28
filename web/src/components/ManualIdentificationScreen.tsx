@@ -71,69 +71,78 @@ export function ManualIdentificationScreen({ onPDFOpen, onBack }: ManualIdentifi
   };
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-b from-green-50 to-blue-50" style={{
-      marginTop:'58px',
-    }}>
-      {/* Header */}
-      <div className="fixed top-0 left-0 right-0 z-1000 bg-white shadow-sm px-4 py-3 flex items-center justify-between">
-        <Button variant="ghost" size="icon" onClick={onBack}>
-          <ChevronLeft className="w-12 h-12" />
-        </Button>
-        <h1 className="text-xl font-medium text-green-800">Manual Identification</h1>
-        <div className="w-12" /> {/* Spacer for centering */}
-      </div>
 
-      {/* Content */}
-      <div className="p-4 relative">
-        <div className="text-center mb-6">
-          <div className="w-16 h-16 mx-auto bg-green-100 rounded-full flex items-center justify-center mb-3">
-            <span className="text-3xl">🔍</span>
-          </div>
-          <h2 className="text-2xl font-medium text-gray-800 mb-2">Browse Categories</h2>
-          <p className="text-base text-gray-600">Select a category to access identification guides and resources</p>
+      <>
+        <div className="fixed top-0 left-0 right-0 z-1000 bg-white shadow-sm px-4 py-3 flex items-center justify-between" style={{
+          zIndex:1000
+        }}>
+          <Button variant="ghost" size="icon" onClick={onBack}>
+            <ChevronLeft className="w-12 h-12" style={{
+              width:24,
+              height:24,
+
+            }} />
+          </Button>
+          <h1 className="text-xl font-bold text-green-800">Manual Identification</h1>
+          <div className="w-12" /> {/* Spacer for centering */}
         </div>
+        <div className="relative min-h-screen bg-gradient-to-b from-green-50 to-blue-50" style={{
+          marginTop:'58px',
+        }}>
 
-        {/* Category Grid */}
-        <div className="grid grid-cols-2 gap-4">
-          {categories.map((category) => (
-            <Card
-              key={category.id}
-              className="z-10 relative overflow-hidden cursor-pointer hover:shadow-lg transition-shadow"
-              onClick={() => handleTileClick(category.title)}
-            >
-              <div className="aspect-square relative">
-                <img
-                  src={category.imageUrl}
-                  alt={category.title}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                  <h3 className="text-white font-medium text-xl tracking-wide">
-                    {category.title}
-                  </h3>
-                </div>
+          <div className="p-4 relative">
+            <div className="text-center mb-6">
+              <div className="w-16 h-16 mx-auto bg-green-100 rounded-full flex items-center justify-center mb-3">
+                <span className="text-3xl">🔍</span>
               </div>
-              <CardContent className="p-3">
-                <p className="text-base text-gray-600 text-center">
-                  {category.description}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
+              <h2 className="text-2xl font-medium text-gray-800 mb-2">Browse Categories</h2>
+              <p className="text-base text-gray-600">Select a category to access identification guides and resources</p>
+            </div>
+
+            {/* Category Grid */}
+            <div className="grid grid-cols-2 gap-4">
+              {categories.map((category) => (
+                  <Card
+                      key={category.id}
+                      className="z-10 relative overflow-hidden cursor-pointer hover:shadow-lg transition-shadow"
+                      onClick={() => handleTileClick(category.title)}
+                  >
+                    <div className="aspect-square relative">
+                      <img
+                          src={category.imageUrl}
+                          alt={category.title}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                        <h3 className="text-white font-medium text-xl tracking-wide">
+                          {category.title}
+                        </h3>
+                      </div>
+                    </div>
+                    <CardContent className="p-3">
+                      <p className="text-base text-gray-600 text-center">
+                        {category.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+              ))}
+            </div>
+
+            {/* Info Section */}
+            <div className="mt-8 bg-white rounded-lg p-4 shadow-sm">
+              <h3 className="font-medium mb-2 text-base text-gray-800">How to Use</h3>
+              <ul className="text-base text-gray-600 space-y-1">
+                <li>• Select a category that matches your specimen</li>
+                <li>• Browse through identification guides</li>
+                <li>• Compare physical characteristics</li>
+                <li>• Use field guides for accurate identification</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
-        {/* Info Section */}
-        <div className="mt-8 bg-white rounded-lg p-4 shadow-sm">
-          <h3 className="font-medium mb-2 text-base text-gray-800">How to Use</h3>
-          <ul className="text-base text-gray-600 space-y-1">
-            <li>• Select a category that matches your specimen</li>
-            <li>• Browse through identification guides</li>
-            <li>• Compare physical characteristics</li>
-            <li>• Use field guides for accurate identification</li>
-          </ul>
-        </div>
-      </div>
-    </div>
+      </>
+
   );
 }
