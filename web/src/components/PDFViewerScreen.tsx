@@ -53,8 +53,9 @@ export function PDFViewerScreen({ title, onBack }: PDFViewerScreenProps) {
 
       {/* Toolbar */}
       <div style={{
-        top:58,
+        top:56,
         zIndex:99,
+        width:'100%',
       }} className="fixed bg-white border-b px-4 py-2 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Button variant="outline" onClick={handleZoomOut}>
