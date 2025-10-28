@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import { Button } from './shared/button';
-import { Card, CardContent, CardHeader, CardTitle } from './shared/card';
-import { Input } from './shared/input';
-import { Textarea } from './shared/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './shared/select';
-import { Badge } from './shared/badge';
+import { Button } from '../shared/button';
+import { Card, CardContent, CardHeader, CardTitle } from '../shared/card';
+import { Input } from '../shared/input';
+import { Textarea } from '../shared/textarea';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../shared/select';
+import { Badge } from '../shared/badge';
 import { ArrowLeft, Save, Eye, Hash, X } from 'lucide-react';
-import { Article } from '../App';
+import { Article } from '../../App';
 
 interface WriteArticleScreenProps {
   onPublish: (article: Omit<Article, 'id' | 'authorId' | 'author' | 'publishDate'>) => void;
@@ -42,7 +42,7 @@ export function WriteArticleScreen({ onPublish, onBack }: WriteArticleScreenProp
 
   const handlePublish = () => {
     if (!title.trim() || !content.trim()) return;
-    
+
     onPublish({
       title: title.trim(),
       content: content.trim(),

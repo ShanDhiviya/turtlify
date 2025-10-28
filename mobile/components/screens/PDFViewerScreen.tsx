@@ -1,4 +1,4 @@
-import { Button } from './shared/button';
+import { Button } from '../shared/button';
 import { ChevronLeft, Download, ZoomIn, ZoomOut } from 'lucide-react';
 import { useState } from 'react';
 
@@ -9,7 +9,7 @@ interface PDFViewerScreenProps {
 
 export function PDFViewerScreen({ title, onBack }: PDFViewerScreenProps) {
   const [zoom, setZoom] = useState(100);
-  
+
   // Sample PDF URL (using a publicly available wildlife PDF)
   const pdfUrl = "https://www.learner.org/wp-content/uploads/2019/05/AnimalBehavior.pdf";
 
@@ -84,7 +84,7 @@ export function PDFViewerScreen({ title, onBack }: PDFViewerScreenProps) {
                 <li>Texture and surface features</li>
               </ul>
             </div>
-            
+
             <div>
               <h4 className="font-medium mb-2">Identification Process:</h4>
               <ol className="list-decimal list-inside space-y-1">
@@ -98,15 +98,15 @@ export function PDFViewerScreen({ title, onBack }: PDFViewerScreenProps) {
             <div>
               <h4 className="font-medium mb-2">Conservation Notes:</h4>
               <p>
-                Please ensure that any specimens being identified comply with local wildlife 
-                protection laws and regulations. Report significant findings to appropriate 
+                Please ensure that any specimens being identified comply with local wildlife
+                protection laws and regulations. Report significant findings to appropriate
                 conservation authorities.
               </p>
             </div>
 
             <div className="bg-green-50 p-4 rounded-lg">
               <p className="text-green-800">
-                <strong>🐢 Turtlify Tip:</strong> For best results, photograph specimens 
+                <strong>🐢 Turtlify Tip:</strong> For best results, photograph specimens
                 from multiple angles and in good lighting conditions.
               </p>
             </div>

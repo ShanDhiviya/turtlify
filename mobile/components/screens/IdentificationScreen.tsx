@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Button } from './shared/button';
-import { Progress } from './shared/progress';
+import { Button } from '../shared/button';
+import { Progress } from '../shared/progress';
 import { ChevronLeft } from 'lucide-react';
-import { AnimalDiscovery } from '../App';
+import { AnimalDiscovery } from '../../App';
 
 interface IdentificationScreenProps {
   image: string;
@@ -33,7 +33,7 @@ export function IdentificationScreen({ image, onAnimalIdentified, onBack }: Iden
 
       // Mock identification result
       await new Promise(resolve => setTimeout(resolve, 500));
-      
+
       const mockAnimal: AnimalDiscovery = {
         id: Date.now().toString(),
         commonName: 'Green Sea Turtle',

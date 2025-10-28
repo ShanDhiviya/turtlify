@@ -1,5 +1,5 @@
-import { Button } from './shared/button';
-import { Card, CardContent } from './shared/card';
+import { Button } from '../shared/button';
+import { Card, CardContent } from '../shared/card';
 import { ChevronLeft } from 'lucide-react';
 
 interface ManualIdentificationScreenProps {
@@ -94,14 +94,14 @@ export function ManualIdentificationScreen({ onPDFOpen, onBack }: ManualIdentifi
         {/* Category Grid */}
         <div className="grid grid-cols-2 gap-4">
           {categories.map((category) => (
-            <Card 
-              key={category.id} 
+            <Card
+              key={category.id}
               className="overflow-hidden cursor-pointer hover:shadow-lg transition-shadow"
               onClick={() => handleTileClick(category.title)}
             >
               <div className="aspect-square relative">
-                <img 
-                  src={category.imageUrl} 
+                <img
+                  src={category.imageUrl}
                   alt={category.title}
                   className="w-full h-full object-cover"
                   loading="lazy"

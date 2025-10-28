@@ -1,8 +1,8 @@
-import { Button } from './shared/button';
-import { Card, CardContent, CardHeader, CardTitle } from './shared/card';
-import { Avatar, AvatarFallback } from './shared/avatar';
+import { Button } from '../shared/button';
+import { Card, CardContent, CardHeader, CardTitle } from '../shared/card';
+import { Avatar, AvatarFallback } from '../shared/avatar';
 import { ChevronLeft, Settings, Award, Camera, BookOpen } from 'lucide-react';
-import { User } from '../App';
+import { User } from '../../App';
 
 interface ProfileScreenProps {
   user: User;

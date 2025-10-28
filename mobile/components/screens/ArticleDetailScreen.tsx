@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { Button } from './shared/button';
-import { Card, CardContent, CardHeader } from './shared/card';
-import { Badge } from './shared/badge';
+import { Button } from '../shared/button';
+import { Card, CardContent, CardHeader } from '../shared/card';
+import { Badge } from '../shared/badge';
 import { ArrowLeft, Share2, Bookmark, Type, Plus, Minus, Heart, MessageCircle } from 'lucide-react';
-import { Article } from '../App';
+import { Article } from '../../App';
 
 interface ArticleDetailScreenProps {
   article: Article;
@@ -43,9 +43,9 @@ export function ArticleDetailScreen({ article, onBack }: ArticleDetailScreenProp
     return text.split('\n').map((paragraph, index) => {
       if (paragraph.startsWith('**') && paragraph.endsWith('**')) {
         return (
-          <h3 
-            key={index} 
-            className="font-semibold mt-6 mb-3" 
+          <h3
+            key={index}
+            className="font-semibold mt-6 mb-3"
             style={{ fontSize: fontSize + 2 }}
           >
             {paragraph.slice(2, -2)}
@@ -54,9 +54,9 @@ export function ArticleDetailScreen({ article, onBack }: ArticleDetailScreenProp
       }
       if (paragraph.trim()) {
         return (
-          <p 
-            key={index} 
-            className="mb-4 leading-relaxed" 
+          <p
+            key={index}
+            className="mb-4 leading-relaxed"
             style={{ fontSize }}
           >
             {paragraph}
@@ -93,9 +93,9 @@ export function ArticleDetailScreen({ article, onBack }: ArticleDetailScreenProp
             <Button variant="ghost" size="sm" onClick={handleShare}>
               <Share2 className="w-4 h-4" />
             </Button>
-            <Button 
-              variant="ghost" 
-              size="sm" 
+            <Button
+              variant="ghost"
+              size="sm"
               onClick={() => setIsBookmarked(!isBookmarked)}
             >
               <Bookmark className={`w-4 h-4 ${isBookmarked ? 'fill-current text-blue-600' : ''}`} />
@@ -106,9 +106,9 @@ export function ArticleDetailScreen({ article, onBack }: ArticleDetailScreenProp
         {/* Font Size Controls */}
         <div className="flex items-center justify-center gap-2 mt-2 p-2 bg-gray-50 rounded-lg">
           <Type className="w-4 h-4 text-gray-500" />
-          <Button 
-            variant="ghost" 
-            size="sm" 
+          <Button
+            variant="ghost"
+            size="sm"
             onClick={decreaseFontSize}
             disabled={fontSize <= 12}
           >
@@ -117,9 +117,9 @@ export function ArticleDetailScreen({ article, onBack }: ArticleDetailScreenProp
           <span className="text-sm text-gray-600 min-w-[3rem] text-center">
             {fontSize}px
           </span>
-          <Button 
-            variant="ghost" 
-            size="sm" 
+          <Button
+            variant="ghost"
+            size="sm"
             onClick={increaseFontSize}
             disabled={fontSize >= 24}
           >
@@ -143,7 +143,7 @@ export function ArticleDetailScreen({ article, onBack }: ArticleDetailScreenProp
                   </Badge>
                 )}
               </div>
-              
+
               <h1 className="text-2xl font-semibold leading-tight">
                 {article.title}
               </h1>
@@ -156,10 +156,10 @@ export function ArticleDetailScreen({ article, onBack }: ArticleDetailScreenProp
                   <div>
                     <div className="font-medium">{article.author}</div>
                     <div className="text-xs">
-                      {new Date(article.publishDate).toLocaleDateString('en-US', { 
-                        year: 'numeric', 
-                        month: 'long', 
-                        day: 'numeric' 
+                      {new Date(article.publishDate).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
                       })}
                     </div>
                   </div>
@@ -197,9 +197,9 @@ export function ArticleDetailScreen({ article, onBack }: ArticleDetailScreenProp
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
               <div className="flex gap-4">
-                <Button 
-                  variant="ghost" 
-                  size="sm" 
+                <Button
+                  variant="ghost"
+                  size="sm"
                   onClick={() => setIsLiked(!isLiked)}
                   className={`gap-2 ${isLiked ? 'text-red-600' : ''}`}
                 >

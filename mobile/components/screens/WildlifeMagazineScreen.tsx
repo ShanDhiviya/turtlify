@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { Button } from './shared/button';
-import { Card, CardContent, CardHeader, CardTitle } from './shared/card';
-import { Badge } from './shared/badge';
-import { Input } from './shared/input';
+import { Button } from '../shared/button';
+import { Card, CardContent, CardHeader, CardTitle } from '../shared/card';
+import { Badge } from '../shared/badge';
+import { Input } from '../shared/input';
 import { ArrowLeft, Search, Edit3, Clock, User, TrendingUp } from 'lucide-react';
-import { Article, User as UserType, Screen } from '../App';
+import { Article, User as UserType, Screen } from '../../App';
 
 interface WildlifeMagazineScreenProps {
   articles: Article[];
@@ -14,18 +14,18 @@ interface WildlifeMagazineScreenProps {
   onBack: () => void;
 }
 
-export function WildlifeMagazineScreen({ 
-  articles, 
-  user, 
-  onArticleSelect, 
-  onNavigate, 
-  onBack 
+export function WildlifeMagazineScreen({
+  articles,
+  user,
+  onArticleSelect,
+  onNavigate,
+  onBack
 }: WildlifeMagazineScreenProps) {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
 
   const categories = ['All', 'Conservation', 'Research', 'Wildlife Photography', 'Field Notes', 'Education'];
-  
+
   const filteredArticles = articles.filter(article => {
     const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          article.content.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -65,7 +65,7 @@ export function WildlifeMagazineScreen({
             <Edit3 className="w-5 h-5" />
           </Button>
         </div>
-        
+
         {/* Search Bar */}
         <div className="relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
@@ -109,9 +109,9 @@ export function WildlifeMagazineScreen({
               <p className="text-sm text-green-50">
                 Have an amazing wildlife encounter or conservation insight? Share it with the community!
               </p>
-              <Button 
-                variant="secondary" 
-                size="sm" 
+              <Button
+                variant="secondary"
+                size="sm"
                 onClick={() => onNavigate('writeArticle')}
                 className="bg-white text-green-700 hover:bg-gray-100"
               >
@@ -163,7 +163,7 @@ export function WildlifeMagazineScreen({
           ) : (
             <div className="space-y-3">
               {filteredArticles.map((article) => (
-                <Card 
+                <Card
                   key={article.id}
                   className={`cursor-pointer hover:shadow-md transition-shadow ${article.featured ? 'border-green-200 bg-green-50' : ''}`}
                   onClick={() => onArticleSelect(article)}
@@ -176,7 +176,7 @@ export function WildlifeMagazineScreen({
                           Featured
                         </Badge>
                       )}
-                      
+
                       <div>
                         <h3 className="font-semibold text-gray-900 mb-1">
                           {article.title}
@@ -196,7 +196,7 @@ export function WildlifeMagazineScreen({
                             {article.author}
                           </div>
                         </div>
-                        
+
                         <div className="flex items-center gap-2 text-xs text-gray-500">
                           <Clock className="w-3 h-3" />
                           {article.readTime} min read

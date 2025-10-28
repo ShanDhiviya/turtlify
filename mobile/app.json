@@ -15,6 +15,9 @@
     ],
     "android": {
       "package": "com.anonymous.turtlifymobile"
+    },
+    "ios": {
+      "bundleIdentifier": "com.anonymous.turtlifymobile"
     }
   }
 }

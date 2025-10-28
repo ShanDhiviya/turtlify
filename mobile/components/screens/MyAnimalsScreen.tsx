@@ -1,8 +1,8 @@
-import { Button } from './shared/button';
-import { Card, CardContent } from './shared/card';
+import { Button } from '../shared/button';
+import { Card, CardContent } from '../shared/card';
 import { ArrowLeft, Search } from 'lucide-react';
-import { Input } from './shared/input';
-import { AnimalDiscovery } from '../App';
+import { Input } from '../shared/input';
+import { AnimalDiscovery } from '../../App';
 import { useState } from 'react';
 
 interface MyAnimalsScreenProps {
@@ -30,7 +30,7 @@ export function MyAnimalsScreen({ animals, onAnimalSelect, onBack }: MyAnimalsSc
           <h1 className="text-lg font-semibold">My Animals</h1>
           <div className="w-10" /> {/* Spacer */}
         </div>
-        
+
         {/* Search Bar */}
         <div className="relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
@@ -81,11 +81,11 @@ export function MyAnimalsScreen({ animals, onAnimalSelect, onBack }: MyAnimalsSc
                 {filteredAnimals.length} {filteredAnimals.length === 1 ? 'Discovery' : 'Discoveries'}
               </h2>
             </div>
-            
+
             <div className="space-y-3">
               {filteredAnimals.map((animal) => (
-                <Card 
-                  key={animal.id} 
+                <Card
+                  key={animal.id}
                   className="cursor-pointer hover:shadow-md transition-shadow"
                   onClick={() => onAnimalSelect(animal)}
                 >

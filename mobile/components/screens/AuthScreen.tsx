@@ -1,21 +1,21 @@
 import { useState } from "react";
-import { Button } from "./shared/button";
-import { Input } from "./shared/input";
+import { Button } from "../shared/button";
+import { Input } from "../shared/input";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-} from "./shared/card";
+} from "../shared/card";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "./shared/tabs";
+} from "../shared/tabs";
 import { AppleIcon } from "./AppleIcon";
 import { GoogleIcon } from "./GoogleIcon";
-import { User } from "../App";
+import { User } from "../../App";
 
 interface AuthScreenProps {
   onLogin: (user: User) => void;
